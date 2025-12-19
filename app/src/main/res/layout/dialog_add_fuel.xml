@@ -1,47 +1,104 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
-    android:layout_height="wrap_content"
-    android:orientation="vertical"
-    android:padding="20dp">
+    android:layout_height="wrap_content">
 
-    <TextView
+    <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Yakıt Fişi Ekle"
-        android:textSize="20sp"
-        android:textStyle="bold"
-        android:gravity="center"
-        android:layout_marginBottom="16dp"
-        android:textColor="@color/black"/>
+        android:orientation="vertical"
+        android:padding="24dp">
 
-    <EditText
-        android:id="@+id/etFuelDate"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:hint="Tarih (Örn: 17.12.2025)"
-        android:focusable="false"
-        android:inputType="date"/>
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Yakıt Fişi Ekle"
+            android:textSize="22sp"
+            android:textStyle="bold"
+            android:gravity="center"
+            android:layout_marginBottom="24dp"
+            android:textColor="@color/garaj_blue"/>
 
-    <EditText
-        android:id="@+id/etLiter"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:hint="Alınan Litre (Örn: 42.5)"
-        android:inputType="numberDecimal"/>
+        <com.google.android.material.textfield.TextInputLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Tarih"
+            app:startIconDrawable="@android:drawable/ic_menu_my_calendar"
+            app:boxBackgroundMode="outline"
+            app:boxCornerRadiusTopStart="12dp"
+            app:boxCornerRadiusTopEnd="12dp"
+            app:boxCornerRadiusBottomStart="12dp"
+            app:boxCornerRadiusBottomEnd="12dp"
+            android:layout_marginBottom="16dp">
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/etFuelDate"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:inputType="date"
+                android:focusable="false"/>
+        </com.google.android.material.textfield.TextInputLayout>
 
-    <EditText
-        android:id="@+id/etTotalCost"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:hint="Ödenen Toplam Tutar (TL)"
-        android:inputType="numberDecimal"/>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:baselineAligned="false"
+            android:layout_marginBottom="16dp">
 
-    <EditText
-        android:id="@+id/etCurrentKm"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:hint="O Anki Kilometre"
-        android:inputType="number"/>
+            <com.google.android.material.textfield.TextInputLayout
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:layout_marginEnd="8dp"
+                android:hint="Alınan Litre"
+                app:boxBackgroundMode="outline"
+                app:boxCornerRadiusTopStart="12dp"
+                app:boxCornerRadiusTopEnd="12dp"
+                app:boxCornerRadiusBottomStart="12dp"
+                app:boxCornerRadiusBottomEnd="12dp">
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/etLiter"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:inputType="numberDecimal"/>
+            </com.google.android.material.textfield.TextInputLayout>
 
-</LinearLayout>
+            <com.google.android.material.textfield.TextInputLayout
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:layout_marginStart="8dp"
+                android:hint="O Anki KM"
+                app:boxBackgroundMode="outline"
+                app:boxCornerRadiusTopStart="12dp"
+                app:boxCornerRadiusTopEnd="12dp"
+                app:boxCornerRadiusBottomStart="12dp"
+                app:boxCornerRadiusBottomEnd="12dp">
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/etCurrentKm"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:inputType="number"/>
+            </com.google.android.material.textfield.TextInputLayout>
+        </LinearLayout>
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Ödenen Toplam Tutar (TL)"
+            app:startIconDrawable="@android:drawable/ic_menu_agenda"
+            app:boxBackgroundMode="outline"
+            app:boxCornerRadiusTopStart="12dp"
+            app:boxCornerRadiusTopEnd="12dp"
+            app:boxCornerRadiusBottomStart="12dp"
+            app:boxCornerRadiusBottomEnd="12dp">
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/etTotalCost"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:inputType="numberDecimal"/>
+        </com.google.android.material.textfield.TextInputLayout>
+
+    </LinearLayout>
+</ScrollView>

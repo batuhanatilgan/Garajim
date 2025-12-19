@@ -1,71 +1,113 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
-    android:layout_height="wrap_content"
-    android:orientation="vertical"
-    android:padding="24dp">
+    android:layout_height="wrap_content">
 
-    <TextView
+    <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Lastik Değişimi Kaydet"
-        android:textSize="20sp"
-        android:textStyle="bold"
-        android:gravity="center"
-        android:layout_marginBottom="20dp"
-        android:textColor="#333"/>
+        android:orientation="vertical"
+        android:padding="24dp">
 
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Takılan Lastik Türü:"
-        android:textStyle="bold"
-        android:layout_marginBottom="8dp"/>
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Lastik Değişimi"
+            android:textSize="22sp"
+            android:textStyle="bold"
+            android:gravity="center"
+            android:layout_marginBottom="24dp"
+            android:textColor="@color/garaj_blue"/>
 
-    <RadioGroup
-        android:id="@+id/rgTireType"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:orientation="horizontal"
-        android:layout_marginBottom="16dp">
-
-        <RadioButton
-            android:id="@+id/rbSummer"
+        <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Yazlık"
-            android:layout_weight="1"/>
+            android:text="Takılan Lastik Türü"
+            android:textStyle="bold"
+            android:textColor="@color/text_secondary"
+            android:layout_marginBottom="8dp"/>
 
-        <RadioButton
-            android:id="@+id/rbWinter"
-            android:layout_width="wrap_content"
+        <RadioGroup
+            android:id="@+id/rgTireType"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Kışlık"
-            android:checked="true"
-            android:layout_weight="1"/>
-    </RadioGroup>
+            android:orientation="horizontal"
+            android:background="@drawable/ic_launcher_background"
+            android:backgroundTint="#F5F5F5"
+            android:padding="8dp"
+            android:layout_marginBottom="20dp">
 
-    <EditText
-        android:id="@+id/etTireDate"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:hint="Değişim Tarihi"
-        android:focusable="false"
-        android:inputType="date"
-        android:layout_marginBottom="10dp"/>
+            <RadioButton
+                android:id="@+id/rbSummer"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="Yazlık"
+                android:paddingStart="8dp"/>
 
-    <EditText
-        android:id="@+id/etTireNotes"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:hint="Notlar (Örn: Michelin takıldı)"
-        android:layout_marginBottom="10dp"/>
+            <RadioButton
+                android:id="@+id/rbWinter"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="Kışlık"
+                android:checked="true"
+                android:paddingStart="8dp"/>
+        </RadioGroup>
 
-    <EditText
-        android:id="@+id/etTireCost"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:hint="Maliyet (TL)"
-        android:inputType="number"/>
+        <com.google.android.material.textfield.TextInputLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Değişim Tarihi"
+            app:startIconDrawable="@android:drawable/ic_menu_my_calendar"
+            app:boxBackgroundMode="outline"
+            app:boxCornerRadiusTopStart="12dp"
+            app:boxCornerRadiusTopEnd="12dp"
+            app:boxCornerRadiusBottomStart="12dp"
+            app:boxCornerRadiusBottomEnd="12dp"
+            android:layout_marginBottom="16dp">
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/etTireDate"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:inputType="date"
+                android:focusable="false"/>
+        </com.google.android.material.textfield.TextInputLayout>
 
-</LinearLayout>
+        <com.google.android.material.textfield.TextInputLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="İşlem Maliyeti (TL)"
+            app:boxBackgroundMode="outline"
+            app:boxCornerRadiusTopStart="12dp"
+            app:boxCornerRadiusTopEnd="12dp"
+            app:boxCornerRadiusBottomStart="12dp"
+            app:boxCornerRadiusBottomEnd="12dp"
+            android:layout_marginBottom="16dp">
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/etTireCost"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:inputType="number"/>
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Notlar"
+            app:helperText="Örn: Michelin Pilot Sport takıldı"
+            app:boxBackgroundMode="outline"
+            app:boxCornerRadiusTopStart="12dp"
+            app:boxCornerRadiusTopEnd="12dp"
+            app:boxCornerRadiusBottomStart="12dp"
+            app:boxCornerRadiusBottomEnd="12dp">
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/etTireNotes"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:inputType="textCapSentences"/>
+        </com.google.android.material.textfield.TextInputLayout>
+
+    </LinearLayout>
+</ScrollView>

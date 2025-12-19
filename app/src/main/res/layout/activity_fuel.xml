@@ -5,15 +5,16 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    android:background="#F5F5F5"
+    android:background="@color/background_gray"
     tools:context=".FuelActivity">
 
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="horizontal"
-        android:padding="16dp"
-        android:background="@color/white"
+        android:paddingVertical="20dp"
+        android:paddingHorizontal="16dp"
+        android:background="@color/garaj_blue"
         android:elevation="4dp"
         android:gravity="center_vertical">
 
@@ -22,7 +23,7 @@
             android:layout_width="32dp"
             android:layout_height="32dp"
             android:src="@drawable/ic_back"
-            app:tint="#333"
+            app:tint="@color/white"
             android:clickable="true"
             android:focusable="true"
             android:background="?selectableItemBackgroundBorderless"/>
@@ -30,26 +31,26 @@
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Yakıt Takibi"
+            android:text="Yakıt Tüketimi"
             android:textSize="20sp"
             android:textStyle="bold"
-            android:textColor="#333"
-            android:layout_marginStart="20dp"/>
+            android:textColor="@color/white"
+            android:layout_marginStart="16dp"/>
     </LinearLayout>
 
     <androidx.cardview.widget.CardView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_margin="16dp"
-        app:cardCornerRadius="16dp"
+        app:cardCornerRadius="20dp"
         app:cardBackgroundColor="#E91E63"
-        app:cardElevation="4dp">
+        app:cardElevation="6dp">
 
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:orientation="vertical"
-            android:padding="20dp"
+            android:padding="24dp"
             android:gravity="center">
 
             <TextView
@@ -57,7 +58,8 @@
                 android:layout_height="wrap_content"
                 android:text="Toplam Harcanan Yakıt"
                 android:textColor="#FCE4EC"
-                android:textSize="14sp"/>
+                android:textSize="14sp"
+                android:letterSpacing="0.05"/>
 
             <TextView
                 android:id="@+id/txtTotalSpent"
@@ -65,17 +67,26 @@
                 android:layout_height="wrap_content"
                 android:text="0.0 TL"
                 android:textColor="@color/white"
-                android:textSize="28sp"
+                android:textSize="32sp"
                 android:textStyle="bold"
-                android:layout_marginTop="5dp"/>
+                android:layout_marginTop="8dp"/>
 
-            <TextView
+            <LinearLayout
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="(Ortalama Tüketim Hesaplaması Yakında)"
-                android:textColor="#F8BBD0"
-                android:textSize="10sp"
-                android:layout_marginTop="5dp"/>
+                android:orientation="horizontal"
+                android:layout_marginTop="8dp"
+                android:background="@drawable/ic_launcher_background"
+                android:backgroundTint="#20FFFFFF"
+                android:paddingHorizontal="12dp"
+                android:paddingVertical="4dp">
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Ortalama: -- Lt/100km"
+                    android:textColor="@color/white"
+                    android:textSize="12sp"/>
+            </LinearLayout>
         </LinearLayout>
     </androidx.cardview.widget.CardView>
 
@@ -84,7 +95,9 @@
         android:layout_width="match_parent"
         android:layout_height="0dp"
         android:layout_weight="1"
-        android:padding="8dp"/>
+        android:clipToPadding="false"
+        android:paddingTop="4dp"
+        android:paddingBottom="80dp"/>
 
     <com.google.android.material.floatingactionbutton.FloatingActionButton
         android:id="@+id/fabAddFuel"
@@ -92,8 +105,10 @@
         android:layout_height="wrap_content"
         android:layout_gravity="end"
         android:layout_margin="24dp"
+        android:layout_marginTop="-24dp"
         android:src="@android:drawable/ic_input_add"
         app:backgroundTint="#E91E63"
-        app:tint="@color/white"/>
+        app:tint="@color/white"
+        app:elevation="6dp"/>
 
 </LinearLayout>

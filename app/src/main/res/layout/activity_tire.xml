@@ -4,14 +4,15 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    android:background="#F5F5F5">
+    android:background="@color/background_gray">
 
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="horizontal"
-        android:padding="16dp"
-        android:background="@color/white"
+        android:paddingVertical="20dp"
+        android:paddingHorizontal="16dp"
+        android:background="@color/garaj_blue"
         android:elevation="4dp"
         android:gravity="center_vertical">
 
@@ -20,7 +21,7 @@
             android:layout_width="32dp"
             android:layout_height="32dp"
             android:src="@drawable/ic_back"
-            app:tint="#333"
+            app:tint="@color/white"
             android:clickable="true"
             android:focusable="true"
             android:background="?selectableItemBackgroundBorderless"/>
@@ -28,11 +29,11 @@
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Lastik Takibi"
+            android:text="Lastik Durumu"
             android:textSize="20sp"
             android:textStyle="bold"
-            android:textColor="#333"
-            android:layout_marginStart="20dp"/>
+            android:textColor="@color/white"
+            android:layout_marginStart="16dp"/>
     </LinearLayout>
 
     <androidx.cardview.widget.CardView
@@ -40,23 +41,24 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_margin="16dp"
-        app:cardCornerRadius="16dp"
-        app:cardBackgroundColor="#4CAF50"
-        app:cardElevation="4dp">
+        app:cardCornerRadius="20dp"
+        app:cardBackgroundColor="@color/success_green"
+        app:cardElevation="6dp">
 
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:orientation="vertical"
-            android:padding="20dp"
+            android:padding="24dp"
             android:gravity="center">
 
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Şu Anki Durum"
+                android:text="Şu An Takılı Olan"
                 android:textColor="#E8F5E9"
-                android:textSize="14sp"/>
+                android:textSize="14sp"
+                android:letterSpacing="0.05"/>
 
             <TextView
                 android:id="@+id/txtCurrentTire"
@@ -64,20 +66,29 @@
                 android:layout_height="wrap_content"
                 android:text="Bilinmiyor"
                 android:textColor="@color/white"
-                android:textSize="24sp"
+                android:textSize="32sp"
                 android:textStyle="bold"
-                android:layout_marginTop="5dp"/>
+                android:layout_marginTop="8dp"/>
 
-            <TextView
-                android:id="@+id/txtWarning"
+            <LinearLayout
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Mevsime uygundur."
-                android:textColor="#C8E6C9"
-                android:textSize="16sp"
-                android:textStyle="bold"
-                android:gravity="center"
-                android:layout_marginTop="10dp"/>
+                android:orientation="horizontal"
+                android:layout_marginTop="12dp"
+                android:background="@drawable/ic_launcher_background"
+                android:backgroundTint="#20FFFFFF"
+                android:paddingHorizontal="16dp"
+                android:paddingVertical="6dp">
+
+                <TextView
+                    android:id="@+id/txtWarning"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Mevsime uygundur"
+                    android:textColor="@color/white"
+                    android:textSize="14sp"
+                    android:textStyle="bold"/>
+            </LinearLayout>
         </LinearLayout>
     </androidx.cardview.widget.CardView>
 
@@ -85,16 +96,20 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="Değişim Geçmişi"
-        android:layout_marginStart="20dp"
+        android:layout_marginStart="24dp"
+        android:layout_marginTop="8dp"
         android:textStyle="bold"
-        android:textColor="#777"/>
+        android:textSize="16sp"
+        android:textColor="@color/black"/>
 
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/rvTireList"
         android:layout_width="match_parent"
         android:layout_height="0dp"
         android:layout_weight="1"
-        android:padding="8dp"/>
+        android:clipToPadding="false"
+        android:paddingTop="10dp"
+        android:paddingBottom="80dp"/>
 
     <com.google.android.material.floatingactionbutton.FloatingActionButton
         android:id="@+id/fabAddTire"
@@ -102,8 +117,10 @@
         android:layout_height="wrap_content"
         android:layout_gravity="end"
         android:layout_margin="24dp"
+        android:layout_marginTop="-24dp"
         android:src="@android:drawable/ic_input_add"
-        app:backgroundTint="#2196F3"
-        app:tint="@color/white"/>
+        app:backgroundTint="@color/garaj_blue_light"
+        app:tint="@color/white"
+        app:elevation="6dp"/>
 
 </LinearLayout>

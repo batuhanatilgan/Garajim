@@ -1,98 +1,168 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:tools="http://schemas.android.com/tools"
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:orientation="vertical"
-    android:padding="24dp"
-    android:gravity="center_horizontal"
-    tools:context=".AddCarActivity">
+    android:background="@color/background_gray">
 
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Yeni Araç Ekle"
-        android:textSize="28sp"
-        android:textStyle="bold"
-        android:layout_marginBottom="30dp"
-        android:textColor="@android:color/black"/>
-
-    <com.google.android.material.textfield.TextInputLayout
+    <LinearLayout
+        android:id="@+id/headerAddCar"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:hint="Araç Marka / Model (Örn: Toyota RAV4)"
-        android:layout_marginBottom="15dp">
-
-        <com.google.android.material.textfield.TextInputEditText
-            android:id="@+id/etCarName"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:inputType="textCapWords"/>
-    </com.google.android.material.textfield.TextInputLayout>
-
-    <com.google.android.material.textfield.TextInputLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:hint="Model Yılı (Örn: 2008)"
-        android:layout_marginBottom="15dp">
-
-        <com.google.android.material.textfield.TextInputEditText
-            android:id="@+id/etCarYear"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:inputType="number"
-            android:maxLength="4"/>
-    </com.google.android.material.textfield.TextInputLayout>
-
-    <com.google.android.material.textfield.TextInputLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:hint="Güncel Kilometre (Örn: 200000)"
-        android:layout_marginBottom="15dp">
-
-        <com.google.android.material.textfield.TextInputEditText
-            android:id="@+id/etCarKm"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:inputType="number"/>
-    </com.google.android.material.textfield.TextInputLayout>
-
-    <TextView
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="Araç Tipi (Muayene Hesabı İçin)"
-        android:layout_marginTop="5dp"
-        android:textColor="#555"
-        android:textStyle="bold"/>
-
-    <RadioGroup
-        android:id="@+id/radioGroupType"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:background="@color/white"
         android:orientation="horizontal"
-        android:layout_marginBottom="25dp">
+        android:gravity="center_vertical"
+        android:padding="20dp"
+        android:elevation="4dp"
+        app:layout_constraintTop_toTopOf="parent">
 
-        <RadioButton
-            android:id="@+id/rbBinek"
+        <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Binek (2 Yıl)"
-            android:checked="true"
-            android:layout_weight="1"/>
+            android:text="Yeni Araç Ekle"
+            android:textSize="22sp"
+            android:textStyle="bold"
+            android:textColor="@color/black"/>
+    </LinearLayout>
 
-        <RadioButton
-            android:id="@+id/rbTicari"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Ticari (1 Yıl)"
-            android:layout_weight="1"/>
-    </RadioGroup>
-    <Button
-        android:id="@+id/btnSaveCar"
+    <ScrollView
         android:layout_width="match_parent"
-        android:layout_height="60dp"
-        android:text="ARACI KAYDET"
-        android:textSize="18sp"
-        android:textStyle="bold"/>
+        android:layout_height="0dp"
+        app:layout_constraintTop_toBottomOf="@id/headerAddCar"
+        app:layout_constraintBottom_toBottomOf="parent">
 
-</LinearLayout>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:padding="20dp">
+
+            <androidx.cardview.widget.CardView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:cardCornerRadius="16dp"
+                app:cardElevation="2dp"
+                app:cardBackgroundColor="@color/white">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:padding="24dp">
+
+                    <com.google.android.material.textfield.TextInputLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:hint="Marka / Model"
+                        app:helperText="Örn: Honda Civic"
+                        app:boxBackgroundMode="outline"
+                        app:boxCornerRadiusTopStart="12dp"
+                        app:boxCornerRadiusTopEnd="12dp"
+                        app:boxCornerRadiusBottomStart="12dp"
+                        app:boxCornerRadiusBottomEnd="12dp"
+                        android:layout_marginBottom="20dp">
+                        <com.google.android.material.textfield.TextInputEditText
+                            android:id="@+id/etCarName"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:inputType="textCapWords"/>
+                    </com.google.android.material.textfield.TextInputLayout>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal"
+                        android:baselineAligned="false"
+                        android:layout_marginBottom="20dp">
+
+                        <com.google.android.material.textfield.TextInputLayout
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:layout_marginEnd="8dp"
+                            android:hint="Yıl"
+                            app:boxBackgroundMode="outline"
+                            app:boxCornerRadiusTopStart="12dp"
+                            app:boxCornerRadiusTopEnd="12dp"
+                            app:boxCornerRadiusBottomStart="12dp"
+                            app:boxCornerRadiusBottomEnd="12dp">
+                            <com.google.android.material.textfield.TextInputEditText
+                                android:id="@+id/etCarYear"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:inputType="number"
+                                android:maxLength="4"/>
+                        </com.google.android.material.textfield.TextInputLayout>
+
+                        <com.google.android.material.textfield.TextInputLayout
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1.5"
+                            android:layout_marginStart="8dp"
+                            android:hint="Kilometre"
+                            app:boxBackgroundMode="outline"
+                            app:boxCornerRadiusTopStart="12dp"
+                            app:boxCornerRadiusTopEnd="12dp"
+                            app:boxCornerRadiusBottomStart="12dp"
+                            app:boxCornerRadiusBottomEnd="12dp">
+                            <com.google.android.material.textfield.TextInputEditText
+                                android:id="@+id/etCarKm"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:inputType="number"/>
+                        </com.google.android.material.textfield.TextInputLayout>
+                    </LinearLayout>
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="Araç Tipi"
+                        android:textColor="@color/text_secondary"
+                        android:textStyle="bold"
+                        android:layout_marginBottom="8dp"/>
+
+                    <RadioGroup
+                        android:id="@+id/radioGroupType"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal"
+                        android:background="@drawable/ic_launcher_background"
+                        android:backgroundTint="#F5F5F5"
+                        android:padding="5dp"
+                        android:layout_marginBottom="24dp">
+
+                        <RadioButton
+                            android:id="@+id/rbBinek"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:text="Binek"
+                            android:checked="true"
+                            android:paddingStart="10dp"/>
+
+                        <RadioButton
+                            android:id="@+id/rbTicari"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:text="Ticari"
+                            android:paddingStart="10dp"/>
+                    </RadioGroup>
+
+                    <com.google.android.material.button.MaterialButton
+                        android:id="@+id/btnSaveCar"
+                        android:layout_width="match_parent"
+                        android:layout_height="60dp"
+                        android:text="ARACI KAYDET"
+                        android:textSize="16sp"
+                        android:textStyle="bold"
+                        app:cornerRadius="16dp"
+                        android:backgroundTint="@color/garaj_blue_light"
+                        app:icon="@android:drawable/ic_menu_save"
+                        app:iconGravity="textStart"/>
+
+                </LinearLayout>
+            </androidx.cardview.widget.CardView>
+        </LinearLayout>
+    </ScrollView>
+</androidx.constraintlayout.widget.ConstraintLayout>

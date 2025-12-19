@@ -1,256 +1,423 @@
 <?xml version="1.0" encoding="utf-8"?>
-<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#F8F9FA"
+    android:background="@color/background_gray"
+    android:orientation="vertical"
     tools:context=".MainActivity">
 
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:orientation="vertical"
-        android:padding="20dp">
+        android:orientation="horizontal"
+        android:paddingHorizontal="24dp"
+        android:paddingTop="32dp"
+        android:paddingBottom="16dp"
+        android:gravity="center_vertical">
+
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:orientation="vertical">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Hoş Geldin,"
+                android:textColor="@color/text_secondary"
+                android:textSize="14sp" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Garajım"
+                android:textColor="@color/garaj_blue"
+                android:textSize="32sp"
+                android:textStyle="bold" />
+        </LinearLayout>
+
+        <androidx.cardview.widget.CardView
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            app:cardCornerRadius="25dp"
+            app:cardElevation="6dp"
+            app:cardBackgroundColor="@color/white">
+            <ImageButton
+                android:id="@+id/btnProfile"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="?selectableItemBackground"
+                android:src="@drawable/ic_person"
+                app:tint="@color/garaj_blue"
+                android:padding="10dp"
+                android:scaleType="centerCrop"/>
+        </androidx.cardview.widget.CardView>
+    </LinearLayout>
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:clipToPadding="false"
+        android:paddingBottom="24dp">
 
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:orientation="horizontal"
-            android:background="@drawable/ic_launcher_background"
-            android:backgroundTint="#FFFFFF"
-            android:elevation="4dp"
-            android:padding="10dp"
-            android:gravity="center_vertical"
-            android:layout_marginBottom="20dp">
-
-            <Spinner
-                android:id="@+id/spinnerCars"
-                android:layout_width="0dp"
-                android:layout_height="50dp"
-                android:layout_weight="1"/>
-
-            <ImageButton
-                android:id="@+id/btnPdfReport"
-                android:layout_width="40dp"
-                android:layout_height="40dp"
-                android:src="@drawable/ic_print"
-                android:background="?android:attr/selectableItemBackgroundBorderless"
-                app:tint="#4CAF50"
-                android:layout_marginEnd="5dp"
-                android:contentDescription="Rapor Al"/>
-
-            <ImageButton
-                android:id="@+id/btnAddNewCar"
-                android:layout_width="40dp"
-                android:layout_height="40dp"
-                android:src="@android:drawable/ic_input_add"
-                android:background="?android:attr/selectableItemBackgroundBorderless"
-                app:tint="#2196F3"
-                android:layout_marginEnd="5dp"
-                android:contentDescription="Araç Ekle"/>
-
-            <ImageButton
-                android:id="@+id/btnProfile"
-                android:layout_width="40dp"
-                android:layout_height="40dp"
-                android:src="@drawable/ic_person"
-                android:background="?android:attr/selectableItemBackgroundBorderless"
-                app:tint="#673AB7"
-                android:contentDescription="Profil"/>
-
-        </LinearLayout>
-
-        <androidx.cardview.widget.CardView
-            android:id="@+id/cardCarInfo"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            app:cardCornerRadius="16dp"
-            app:cardElevation="6dp"
-            app:cardBackgroundColor="#2196F3"
-            android:foreground="?android:attr/selectableItemBackground"
-            android:layout_marginBottom="25dp">
+            android:orientation="vertical"
+            android:paddingHorizontal="24dp">
 
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:orientation="vertical"
-                android:padding="24dp"
-                android:gravity="center">
+                android:orientation="horizontal"
+                android:gravity="center_vertical"
+                android:layout_marginBottom="24dp">
 
-                <ImageView
-                    android:id="@+id/imgCar"
-                    android:layout_width="80dp"
-                    android:layout_height="80dp"
-                    android:src="@android:drawable/sym_def_app_icon"
-                    app:tint="#FFFFFF"
-                    android:layout_marginBottom="10dp"/>
+                <androidx.cardview.widget.CardView
+                    android:layout_width="0dp"
+                    android:layout_height="55dp"
+                    android:layout_weight="1"
+                    app:cardCornerRadius="18dp"
+                    app:cardElevation="4dp"
+                    app:cardBackgroundColor="@color/white">
+                    <Spinner
+                        android:id="@+id/spinnerCars"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:paddingStart="12dp"
+                        android:background="@null"/>
+                </androidx.cardview.widget.CardView>
 
-                <TextView
-                    android:id="@+id/txtCarName"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="Aracınızı Seçin"
-                    android:textSize="22sp"
-                    android:textStyle="bold"
-                    android:textColor="#FFFFFF"/>
+                <androidx.cardview.widget.CardView
+                    android:layout_width="55dp"
+                    android:layout_height="55dp"
+                    android:layout_marginStart="12dp"
+                    app:cardCornerRadius="18dp"
+                    app:cardElevation="4dp"
+                    app:cardBackgroundColor="@color/white">
+                    <ImageButton
+                        android:id="@+id/btnPdfReport"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:background="?selectableItemBackground"
+                        android:src="@drawable/ic_print"
+                        app:tint="@color/success_green"
+                        android:padding="14dp"/>
+                </androidx.cardview.widget.CardView>
 
-                <TextView
-                    android:id="@+id/txtKm"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="--- KM"
-                    android:textSize="18sp"
-                    android:textColor="#E3F2FD"
-                    android:layout_marginTop="5dp"/>
-
-                <TextView
-                    android:id="@+id/txtMaintenanceInfo"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="Bakım Durumu"
-                    android:textSize="14sp"
-                    android:textColor="#BBDEFB"
-                    android:layout_marginTop="10dp"/>
-
+                <androidx.cardview.widget.CardView
+                    android:layout_width="55dp"
+                    android:layout_height="55dp"
+                    android:layout_marginStart="12dp"
+                    app:cardCornerRadius="18dp"
+                    app:cardElevation="4dp"
+                    app:cardBackgroundColor="@color/garaj_blue">
+                    <ImageButton
+                        android:id="@+id/btnAddNewCar"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:background="?selectableItemBackground"
+                        android:src="@android:drawable/ic_input_add"
+                        app:tint="@color/white"
+                        android:padding="14dp"/>
+                </androidx.cardview.widget.CardView>
             </LinearLayout>
-        </androidx.cardview.widget.CardView>
-
-        <GridLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:columnCount="2"
-            android:rowCount="2">
 
             <androidx.cardview.widget.CardView
-                android:id="@+id/btnMaintenance"
-                android:layout_width="0dp"
-                android:layout_height="140dp"
-                android:layout_columnWeight="1"
-                android:layout_margin="8dp"
-                app:cardCornerRadius="12dp"
-                app:cardElevation="4dp"
-                android:foreground="?android:attr/selectableItemBackground">
+                android:id="@+id/cardCarInfo"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:cardCornerRadius="28dp"
+                app:cardElevation="12dp"
+                app:cardBackgroundColor="@color/garaj_blue"
+                android:foreground="?android:attr/selectableItemBackground"
+                android:layout_marginBottom="32dp">
 
                 <LinearLayout
                     android:layout_width="match_parent"
-                    android:layout_height="match_parent"
+                    android:layout_height="wrap_content"
                     android:orientation="vertical"
-                    android:gravity="center"
-                    android:padding="16dp">
+                    android:padding="24dp">
 
-                    <ImageView
-                        android:layout_width="48dp"
-                        android:layout_height="48dp"
-                        android:src="@android:drawable/ic_menu_manage"
-                        app:tint="#FF5722"/>
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal"
+                        android:gravity="center_vertical">
+
+                        <LinearLayout
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:orientation="vertical">
+                            <TextView
+                                android:id="@+id/txtCarName"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="Araç Seçilmedi"
+                                android:textSize="22sp"
+                                android:textStyle="bold"
+                                android:textColor="@color/white"/>
+                            <TextView
+                                android:text="Aktif Araç Durumu"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:textColor="#B3FFFFFF"
+                                android:textSize="12sp"
+                                android:layout_marginTop="2dp"/>
+                        </LinearLayout>
+
+                        <ImageView
+                            android:id="@+id/imgCar"
+                            android:layout_width="50dp"
+                            android:layout_height="50dp"
+                            android:src="@android:drawable/sym_def_app_icon"
+                            app:tint="@color/white"
+                            android:alpha="0.8"/>
+                    </LinearLayout>
+
+                    <View
+                        android:layout_width="match_parent"
+                        android:layout_height="1dp"
+                        android:background="#33FFFFFF"
+                        android:layout_marginVertical="20dp"/>
 
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="Bakım &amp; Servis"
-                        android:textStyle="bold"
-                        android:layout_marginTop="10dp"/>
-                </LinearLayout>
-            </androidx.cardview.widget.CardView>
-
-            <androidx.cardview.widget.CardView
-                android:id="@+id/btnFuel"
-                android:layout_width="0dp"
-                android:layout_height="140dp"
-                android:layout_columnWeight="1"
-                android:layout_margin="8dp"
-                app:cardCornerRadius="12dp"
-                app:cardElevation="4dp"
-                android:foreground="?android:attr/selectableItemBackground">
-
-                <LinearLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:orientation="vertical"
-                    android:gravity="center"
-                    android:padding="16dp">
-
-                    <ImageView
-                        android:layout_width="48dp"
-                        android:layout_height="48dp"
-                        android:src="@android:drawable/stat_sys_warning"
-                        app:tint="#E91E63"/>
+                        android:text="GÜNCEL KİLOMETRE"
+                        android:textColor="#CCFFFFFF"
+                        android:textSize="12sp"
+                        android:letterSpacing="0.1"
+                        android:textStyle="bold"/>
 
                     <TextView
+                        android:id="@+id/txtKm"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="Yakıt Takibi"
+                        android:text="--- KM"
+                        android:textSize="42sp"
                         android:textStyle="bold"
-                        android:layout_marginTop="10dp"/>
+                        android:textColor="@color/white"
+                        android:layout_marginTop="5dp"
+                        android:layout_marginBottom="24dp"/>
+
+                    <androidx.cardview.widget.CardView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        app:cardCornerRadius="12dp"
+                        app:cardBackgroundColor="#20FFFFFF"
+                        app:cardElevation="0dp">
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="vertical"
+                            android:padding="16dp">
+
+                            <LinearLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:orientation="horizontal"
+                                android:layout_marginBottom="10dp"
+                                android:gravity="center_vertical">
+
+                                <ImageView
+                                    android:layout_width="16dp"
+                                    android:layout_height="16dp"
+                                    android:src="@android:drawable/ic_menu_manage"
+                                    app:tint="@color/garaj_orange"/>
+
+                                <TextView
+                                    android:id="@+id/txtMaintenanceInfo"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:text="Sonraki Bakım: ---"
+                                    android:textColor="@color/white"
+                                    android:textStyle="bold"
+                                    android:textSize="14sp"
+                                    android:layout_marginStart="8dp"/>
+                            </LinearLayout>
+
+                            <ProgressBar
+                                android:id="@+id/progressBarMaintenance"
+                                style="?android:attr/progressBarStyleHorizontal"
+                                android:layout_width="match_parent"
+                                android:layout_height="8dp"
+                                android:progress="70"
+                                android:progressTint="@color/garaj_orange"
+                                android:progressBackgroundTint="#40FFFFFF"/>
+                        </LinearLayout>
+                    </androidx.cardview.widget.CardView>
+
                 </LinearLayout>
             </androidx.cardview.widget.CardView>
 
-            <androidx.cardview.widget.CardView
-                android:id="@+id/btnLegal"
-                android:layout_width="0dp"
-                android:layout_height="140dp"
-                android:layout_columnWeight="1"
-                android:layout_margin="8dp"
-                app:cardCornerRadius="12dp"
-                app:cardElevation="4dp"
-                android:foreground="?android:attr/selectableItemBackground">
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Hızlı İşlemler"
+                android:textSize="20sp"
+                android:textStyle="bold"
+                android:textColor="@color/black"
+                android:layout_marginBottom="16dp"/>
 
-                <LinearLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:orientation="vertical"
-                    android:gravity="center"
-                    android:padding="16dp">
+            <GridLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:columnCount="2"
+                android:rowCount="2"
+                android:alignmentMode="alignMargins"
+                android:columnOrderPreserved="false">
 
-                    <ImageView
-                        android:layout_width="48dp"
-                        android:layout_height="48dp"
-                        android:src="@android:drawable/ic_menu_my_calendar"
-                        app:tint="#673AB7"/>
+                <androidx.cardview.widget.CardView
+                    android:id="@+id/btnMaintenance"
+                    android:layout_width="0dp"
+                    android:layout_height="140dp"
+                    android:layout_columnWeight="1"
+                    android:layout_marginEnd="8dp"
+                    android:layout_marginBottom="16dp"
+                    app:cardCornerRadius="20dp"
+                    app:cardElevation="3dp"
+                    app:cardBackgroundColor="@color/white"
+                    android:foreground="?android:attr/selectableItemBackground">
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:orientation="vertical"
+                        android:gravity="center"
+                        android:padding="16dp">
+                        <ImageView
+                            android:layout_width="48dp"
+                            android:layout_height="48dp"
+                            android:src="@android:drawable/ic_menu_manage"
+                            app:tint="@color/garaj_orange"
+                            android:background="@drawable/ic_launcher_background"
+                            android:backgroundTint="#FFF3E0"
+                            android:padding="10dp"/>
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Bakım &amp; Servis"
+                            android:textSize="14sp"
+                            android:textStyle="bold"
+                            android:textColor="@color/black"
+                            android:layout_marginTop="12dp"/>
+                    </LinearLayout>
+                </androidx.cardview.widget.CardView>
 
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:text="Sigorta &amp; Muayene"
-                        android:textStyle="bold"
-                        android:layout_marginTop="10dp"/>
-                </LinearLayout>
-            </androidx.cardview.widget.CardView>
+                <androidx.cardview.widget.CardView
+                    android:id="@+id/btnFuel"
+                    android:layout_width="0dp"
+                    android:layout_height="140dp"
+                    android:layout_columnWeight="1"
+                    android:layout_marginStart="8dp"
+                    android:layout_marginBottom="16dp"
+                    app:cardCornerRadius="20dp"
+                    app:cardElevation="3dp"
+                    app:cardBackgroundColor="@color/white"
+                    android:foreground="?android:attr/selectableItemBackground">
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:orientation="vertical"
+                        android:gravity="center"
+                        android:padding="16dp">
+                        <ImageView
+                            android:layout_width="48dp"
+                            android:layout_height="48dp"
+                            android:src="@android:drawable/stat_sys_warning"
+                            app:tint="#E91E63"
+                            android:background="@drawable/ic_launcher_background"
+                            android:backgroundTint="#FCE4EC"
+                            android:padding="10dp"/>
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Yakıt Takibi"
+                            android:textSize="14sp"
+                            android:textStyle="bold"
+                            android:textColor="@color/black"
+                            android:layout_marginTop="12dp"/>
+                    </LinearLayout>
+                </androidx.cardview.widget.CardView>
 
-            <androidx.cardview.widget.CardView
-                android:id="@+id/btnTire"
-                android:layout_width="0dp"
-                android:layout_height="140dp"
-                android:layout_columnWeight="1"
-                android:layout_margin="8dp"
-                app:cardCornerRadius="12dp"
-                app:cardElevation="4dp"
-                android:foreground="?android:attr/selectableItemBackground">
+                <androidx.cardview.widget.CardView
+                    android:id="@+id/btnLegal"
+                    android:layout_width="0dp"
+                    android:layout_height="140dp"
+                    android:layout_columnWeight="1"
+                    android:layout_marginEnd="8dp"
+                    android:layout_marginBottom="16dp"
+                    app:cardCornerRadius="20dp"
+                    app:cardElevation="3dp"
+                    app:cardBackgroundColor="@color/white"
+                    android:foreground="?android:attr/selectableItemBackground">
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:orientation="vertical"
+                        android:gravity="center"
+                        android:padding="16dp">
+                        <ImageView
+                            android:layout_width="48dp"
+                            android:layout_height="48dp"
+                            android:src="@android:drawable/ic_menu_my_calendar"
+                            app:tint="#673AB7"
+                            android:background="@drawable/ic_launcher_background"
+                            android:backgroundTint="#EDE7F6"
+                            android:padding="10dp"/>
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Yasal İşlemler"
+                            android:textSize="14sp"
+                            android:textStyle="bold"
+                            android:textColor="@color/black"
+                            android:layout_marginTop="12dp"/>
+                    </LinearLayout>
+                </androidx.cardview.widget.CardView>
 
-                <LinearLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:orientation="vertical"
-                    android:gravity="center"
-                    android:padding="16dp">
+                <androidx.cardview.widget.CardView
+                    android:id="@+id/btnTire"
+                    android:layout_width="0dp"
+                    android:layout_height="140dp"
+                    android:layout_columnWeight="1"
+                    android:layout_marginStart="8dp"
+                    android:layout_marginBottom="16dp"
+                    app:cardCornerRadius="20dp"
+                    app:cardElevation="3dp"
+                    app:cardBackgroundColor="@color/white"
+                    android:foreground="?android:attr/selectableItemBackground">
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:orientation="vertical"
+                        android:gravity="center"
+                        android:padding="16dp">
+                        <ImageView
+                            android:layout_width="48dp"
+                            android:layout_height="48dp"
+                            android:src="@drawable/ic_snow"
+                            app:tint="@color/garaj_blue"
+                            android:background="@drawable/ic_launcher_background"
+                            android:backgroundTint="#E3F2FD"
+                            android:padding="10dp"/>
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Lastik Takibi"
+                            android:textSize="14sp"
+                            android:textStyle="bold"
+                            android:textColor="@color/black"
+                            android:layout_marginTop="12dp"/>
+                    </LinearLayout>
+                </androidx.cardview.widget.CardView>
 
-                    <ImageView
-                        android:layout_width="48dp"
-                        android:layout_height="48dp"
-                        android:src="@drawable/ic_snow"
-                        app:tint="#2196F3"/>
-
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:text="Lastik Takibi"
-                        android:textStyle="bold"
-                        android:layout_marginTop="10dp"/>
-                </LinearLayout>
-            </androidx.cardview.widget.CardView>
-
-        </GridLayout>
-
-    </LinearLayout>
-</ScrollView>
+            </GridLayout>
+        </LinearLayout>
+    </ScrollView>
+</LinearLayout>
