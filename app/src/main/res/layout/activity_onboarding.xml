@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/white">
+
+    <androidx.viewpager2.widget.ViewPager2
+        android:id="@+id/viewPager"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        app:layout_constraintBottom_toTopOf="@+id/layoutBottom"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <LinearLayout
+        android:id="@+id/layoutBottom"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:padding="24dp"
+        android:gravity="center_vertical"
+        app:layout_constraintBottom_toBottomOf="parent">
+
+        <TextView
+            android:id="@+id/txtIndicator"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="1 / 3"
+            android:textColor="#999"
+            android:textSize="16sp"
+            android:layout_weight="1"/>
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/btnNext"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="İLERİ"
+            android:textSize="16sp"
+            android:textStyle="bold"
+            app:cornerRadius="24dp"
+            android:paddingHorizontal="32dp"
+            android:paddingVertical="12dp"
+            app:backgroundTint="#2196F3"/>
+
+    </LinearLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

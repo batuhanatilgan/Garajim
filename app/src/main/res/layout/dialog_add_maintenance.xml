@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    android:padding="20dp">
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Yeni Bakım Ekle"
+        android:textSize="20sp"
+        android:textStyle="bold"
+        android:gravity="center"
+        android:layout_marginBottom="16dp"
+        android:textColor="@color/black"/>
+
+    <EditText
+        android:id="@+id/etDate"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Tarih (Örn: 18.12.2025)"
+        android:inputType="date"/>
+
+    <EditText
+        android:id="@+id/etKm"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Kilometre (Örn: 210000)"
+        android:inputType="number"/>
+
+    <EditText
+        android:id="@+id/etOperations"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Yapılan İşlemler (Yağ, Filtre...)"/>
+
+    <EditText
+        android:id="@+id/etNotes"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Notlar (Opsiyonel)"/>
+
+    <EditText
+        android:id="@+id/etCost"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Tutar (TL)"
+        android:inputType="number"/>
+
+</LinearLayout>

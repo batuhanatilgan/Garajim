@@ -1,0 +1,109 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="#F5F5F5">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:padding="16dp"
+        android:background="@color/white"
+        android:elevation="4dp"
+        android:gravity="center_vertical">
+
+        <ImageView
+            android:id="@+id/btnBack"
+            android:layout_width="32dp"
+            android:layout_height="32dp"
+            android:src="@drawable/ic_back"
+            app:tint="#333"
+            android:clickable="true"
+            android:focusable="true"
+            android:background="?selectableItemBackgroundBorderless"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Lastik Takibi"
+            android:textSize="20sp"
+            android:textStyle="bold"
+            android:textColor="#333"
+            android:layout_marginStart="20dp"/>
+    </LinearLayout>
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/cardStatus"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="16dp"
+        app:cardCornerRadius="16dp"
+        app:cardBackgroundColor="#4CAF50"
+        app:cardElevation="4dp">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:padding="20dp"
+            android:gravity="center">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Şu Anki Durum"
+                android:textColor="#E8F5E9"
+                android:textSize="14sp"/>
+
+            <TextView
+                android:id="@+id/txtCurrentTire"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Bilinmiyor"
+                android:textColor="@color/white"
+                android:textSize="24sp"
+                android:textStyle="bold"
+                android:layout_marginTop="5dp"/>
+
+            <TextView
+                android:id="@+id/txtWarning"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Mevsime uygundur."
+                android:textColor="#C8E6C9"
+                android:textSize="16sp"
+                android:textStyle="bold"
+                android:gravity="center"
+                android:layout_marginTop="10dp"/>
+        </LinearLayout>
+    </androidx.cardview.widget.CardView>
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Değişim Geçmişi"
+        android:layout_marginStart="20dp"
+        android:textStyle="bold"
+        android:textColor="#777"/>
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/rvTireList"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:padding="8dp"/>
+
+    <com.google.android.material.floatingactionbutton.FloatingActionButton
+        android:id="@+id/fabAddTire"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="end"
+        android:layout_margin="24dp"
+        android:src="@android:drawable/ic_input_add"
+        app:backgroundTint="#2196F3"
+        app:tint="@color/white"/>
+
+</LinearLayout>

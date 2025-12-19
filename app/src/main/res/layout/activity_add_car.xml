@@ -1,0 +1,98 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:padding="24dp"
+    android:gravity="center_horizontal"
+    tools:context=".AddCarActivity">
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Yeni Araç Ekle"
+        android:textSize="28sp"
+        android:textStyle="bold"
+        android:layout_marginBottom="30dp"
+        android:textColor="@android:color/black"/>
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Araç Marka / Model (Örn: Toyota RAV4)"
+        android:layout_marginBottom="15dp">
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/etCarName"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:inputType="textCapWords"/>
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Model Yılı (Örn: 2008)"
+        android:layout_marginBottom="15dp">
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/etCarYear"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:inputType="number"
+            android:maxLength="4"/>
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Güncel Kilometre (Örn: 200000)"
+        android:layout_marginBottom="15dp">
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/etCarKm"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:inputType="number"/>
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Araç Tipi (Muayene Hesabı İçin)"
+        android:layout_marginTop="5dp"
+        android:textColor="#555"
+        android:textStyle="bold"/>
+
+    <RadioGroup
+        android:id="@+id/radioGroupType"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_marginBottom="25dp">
+
+        <RadioButton
+            android:id="@+id/rbBinek"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Binek (2 Yıl)"
+            android:checked="true"
+            android:layout_weight="1"/>
+
+        <RadioButton
+            android:id="@+id/rbTicari"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Ticari (1 Yıl)"
+            android:layout_weight="1"/>
+    </RadioGroup>
+    <Button
+        android:id="@+id/btnSaveCar"
+        android:layout_width="match_parent"
+        android:layout_height="60dp"
+        android:text="ARACI KAYDET"
+        android:textSize="18sp"
+        android:textStyle="bold"/>
+
+</LinearLayout>

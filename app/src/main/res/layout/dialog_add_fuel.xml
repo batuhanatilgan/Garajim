@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    android:padding="20dp">
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Yakıt Fişi Ekle"
+        android:textSize="20sp"
+        android:textStyle="bold"
+        android:gravity="center"
+        android:layout_marginBottom="16dp"
+        android:textColor="@color/black"/>
+
+    <EditText
+        android:id="@+id/etFuelDate"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Tarih (Örn: 17.12.2025)"
+        android:focusable="false"
+        android:inputType="date"/>
+
+    <EditText
+        android:id="@+id/etLiter"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Alınan Litre (Örn: 42.5)"
+        android:inputType="numberDecimal"/>
+
+    <EditText
+        android:id="@+id/etTotalCost"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Ödenen Toplam Tutar (TL)"
+        android:inputType="numberDecimal"/>
+
+    <EditText
+        android:id="@+id/etCurrentKm"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="O Anki Kilometre"
+        android:inputType="number"/>
+
+</LinearLayout>

@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "70318328102",
+    "project_id": "garajim-56527",
+    "storage_bucket": "garajim-56527.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:70318328102:android:b0f234239a8055c2d599e7",
+        "android_client_info": {
+          "package_name": "com.batuhanatilgan.garajim"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyB2yfUwYhp-nxyY-Xi8vmZrt5nzvgYmUsI"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
